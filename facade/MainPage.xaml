@@ -6,6 +6,7 @@
              >
 
     <ScrollView>
+        <!-- Main grid -->
         <Grid Padding="0" RowSpacing="16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -16,7 +17,10 @@
 
 
             <!--<RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="48" MaximumHeightRequest="150"/>-->
-            <StackLayout HorizontalOptions="Fill" BackgroundColor="#facade" Padding="8" Grid.Row="0" Orientation="Horizontal"  >
+            <!--<StackLayout HorizontalOptions="Fill"
+                         BackgroundColor="#facade"
+                         Padding="8" Grid.Row="0"
+                         Orientation="Horizontal" >
 
                 <Label Text="#" FontSize="60" VerticalOptions="Center" />
                 <Label Text="FACADE"
@@ -24,8 +28,19 @@
                        VerticalOptions="Center"
                        />
 
-            </StackLayout>
+            </StackLayout>-->
 
+            <!-- Mystery color -->
+            <Frame BackgroundColor="#facade"
+                   CornerRadius="36"
+                   Margin="12">
+
+                <!-- Guess text -->
+                <Label Text="#FACADE" FontSize="60" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            </Frame>
+
+            <!-- Past guesses -->
             <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -38,18 +53,23 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
+                <!-- Past guess 1 -->
                 <Button Grid.Row="0"
                     Grid.Column="0"
                     Text="#beaded"
                     BackgroundColor="#beaded"
                     FontSize="16"
                     IsEnabled="false "/>
+                
+                <!-- Past guess 2 -->
                 <Button Grid.Row="0"
                     Grid.Column="1"
-                    Text="#fadedd"
-                    BackgroundColor="#fadedd"
+                    Text="#deface"
+                    BackgroundColor="#deface"
                     FontSize="16"
                     IsEnabled="false "/>
+                
+                <!-- Past guess 3 -->
                 <Button Grid.Row="0"
                     Grid.Column="2"
                     Text="#beefed"
@@ -57,6 +77,7 @@
                     FontSize="16"
                     IsEnabled="false "/>
 
+                <!-- Empty guess -->
                 <Button Grid.Row="1"
                     Grid.Column="0"
                     Text=""
@@ -65,6 +86,8 @@
                     BorderWidth="1"
                     FontSize="16"
                     IsEnabled="false "/>
+                
+                <!-- Empty guess -->
                 <Button Grid.Row="1"
                     Grid.Column="1"
                     Text=""
@@ -73,6 +96,8 @@
                     BorderWidth="1"
                     FontSize="16"
                     IsEnabled="false "/>
+                
+                <!-- Empty guess -->
                 <Button Grid.Row="1"
                     Grid.Column="2"
                     Text=""
@@ -84,6 +109,7 @@
 
             </Grid>
 
+            <!-- Keyboard -->
             <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -98,85 +124,100 @@
 
                 </Grid.ColumnDefinitions>
 
+                <!-- A -->
                 <Button Grid.Row="0"
                     Grid.Column="0"
                     Text="A"
                     WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
                     FontSize="48"
                 />
+                
+                <!-- B -->
                 <Button Grid.Row="0"
                     Grid.Column="1"
                     Text="B"
                     WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
 
                     FontSize="48"
                 />
+                
+                <!-- C -->
                 <Button Grid.Row="0"
                     Grid.Column="2"
                     Text="C"
                    WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
 
                     FontSize="48"
                 />
+                
+                <!-- D -->
                 <Button Grid.Row="1"
                     Grid.Column="0"
                     Text="D"
                     WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
 
                     FontSize="48"
                 />
+                
+                <!-- E -->
                 <Button Grid.Row="1"
                     Grid.Column="1"
                     Text="E"
                     WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
 
                     FontSize="48"
                 />
+                
+                <!-- F -->
                 <Button Grid.Row="1"
                     Grid.Column="2"
                     Text="F"
                     WidthRequest="80"
                     HeightRequest="80"
-                    BackgroundColor="#666"
+                    BackgroundColor="#000"
                     TextColor="White"
 
                     FontSize="48"
                 />
+                
+                <!-- Submit -->
                 <Button Grid.Row="0"
                     Grid.Column="3"
                     Text="↑"
                     WidthRequest="60"
                     HeightRequest="60"
-                        CornerRadius="30"
-                    BackgroundColor="#666"
+                    CornerRadius="30"
+                    BackgroundColor="#000"
                     TextColor="White"
-
+                    Clicked="Button_Clicked"
                     FontSize="32"
                 />
+                
+                <!-- Backspace -->
                 <Button Grid.Row="1"
                     Grid.Column="3"
                     Text="⌫"
                     WidthRequest="60"
                     HeightRequest="60"
                     BackgroundColor="Transparent"
-                    TextColor="#333"
+                    TextColor="#000"
                     BorderWidth="0"
-                    FontSize="36"
+                    FontSize="28"
                 />
 
 
