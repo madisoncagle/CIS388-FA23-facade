@@ -36,7 +36,11 @@
                    Margin="12">
 
                 <!-- Guess text -->
-                <Label Text="#FACADE" FontSize="60" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Text="#FACADE"
+                       FontSize="60"
+                       FontFamily="PoppinsBold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
 
             </Frame>
 
@@ -55,57 +59,63 @@
 
                 <!-- Past guess 1 -->
                 <Button Grid.Row="0"
-                    Grid.Column="0"
-                    Text="#beaded"
-                    BackgroundColor="#beaded"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="0"
+                        Text="#beaded"
+                        BackgroundColor="#beaded"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
                 
                 <!-- Past guess 2 -->
                 <Button Grid.Row="0"
-                    Grid.Column="1"
-                    Text="#deface"
-                    BackgroundColor="#deface"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="1"
+                        Text="#deface"
+                        BackgroundColor="#deface"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
                 
                 <!-- Past guess 3 -->
                 <Button Grid.Row="0"
-                    Grid.Column="2"
-                    Text="#beefed"
-                    BackgroundColor="#beefed"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="2"
+                        Text="#beefed"
+                        BackgroundColor="#beefed"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
 
                 <!-- Empty guess -->
                 <Button Grid.Row="1"
-                    Grid.Column="0"
-                    Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="0"
+                        Text=""
+                        BackgroundColor="Transparent"
+                        BorderColor="#111"
+                        BorderWidth="1"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
                 
                 <!-- Empty guess -->
                 <Button Grid.Row="1"
-                    Grid.Column="1"
-                    Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="1"
+                        Text=""
+                        BackgroundColor="Transparent"
+                        BorderColor="#111"
+                        BorderWidth="1"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
                 
                 <!-- Empty guess -->
                 <Button Grid.Row="1"
-                    Grid.Column="2"
-                    Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
+                        Grid.Column="2"
+                        Text=""
+                        BackgroundColor="Transparent"
+                        BorderColor="#111"
+                        BorderWidth="1"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        IsEnabled="false "/>
 
             </Grid>
 
@@ -126,98 +136,112 @@
 
                 <!-- A -->
                 <Button Grid.Row="0"
-                    Grid.Column="0"
-                    Text="A"
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
-                    FontSize="48"
+                        Grid.Column="0"
+                        Text="A"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- B -->
                 <Button Grid.Row="0"
-                    Grid.Column="1"
-                    Text="B"
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
+                        Grid.Column="1"
+                        Text="B"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
 
-                    FontSize="48"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- C -->
                 <Button Grid.Row="0"
-                    Grid.Column="2"
-                    Text="C"
-                   WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
+                        Grid.Column="2"
+                        Text="C"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
 
-                    FontSize="48"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- D -->
                 <Button Grid.Row="1"
-                    Grid.Column="0"
-                    Text="D"
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
+                        Grid.Column="0"
+                        Text="D"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
 
-                    FontSize="48"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- E -->
                 <Button Grid.Row="1"
-                    Grid.Column="1"
-                    Text="E"
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
+                        Grid.Column="1"
+                        Text="E"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
 
-                    FontSize="48"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- F -->
                 <Button Grid.Row="1"
-                    Grid.Column="2"
-                    Text="F"
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    BackgroundColor="#000"
-                    TextColor="White"
+                        Grid.Column="2"
+                        Text="F"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        BackgroundColor="#000"
+                        TextColor="White"
 
-                    FontSize="48"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,5,0,0"
                 />
                 
                 <!-- Submit -->
                 <Button Grid.Row="0"
-                    Grid.Column="3"
-                    Text="↑"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    CornerRadius="30"
-                    BackgroundColor="#000"
-                    TextColor="White"
-                    Clicked="Button_Clicked"
-                    FontSize="32"
-                />
+                        Grid.Column="3"
+                        Text="↑"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        CornerRadius="30"
+                        BackgroundColor="#000"
+                        TextColor="White"
+                        Clicked="Button_Clicked"
+                        FontSize="48"
+                        FontFamily="PoppinsBold"
+                        Padding="0,-8,0,0"/>
                 
                 <!-- Backspace -->
                 <Button Grid.Row="1"
-                    Grid.Column="3"
-                    Text="⌫"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    BackgroundColor="Transparent"
-                    TextColor="#000"
-                    BorderWidth="0"
-                    FontSize="28"
+                        Grid.Column="3"
+                        Text="⌫"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        BackgroundColor="Transparent"
+                        TextColor="#000"
+                        BorderWidth="0"
+                        FontSize="28"
+                        FontFamily="PoppinsBold"
                 />
 
 
