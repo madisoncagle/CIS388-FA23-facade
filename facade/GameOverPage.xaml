@@ -3,32 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
              Title="">
-    <!--<VerticalStackLayout VerticalOptions="Center">
-        
-        --><!-- Win/loss label --><!--
-        <Label 
-            Text="You won!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            FontSize="48"/>
-
-        <Frame BackgroundColor="#facade"
-               Margin="12"
-               CornerRadius="24">
-
-            <Label Text="#FACADE"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   FontSize="24" />
-
-        </Frame>
-
-        <Button Text="PLAY AGAIN"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                BackgroundColor="#000" />
-
-    </VerticalStackLayout>-->
 
     <Grid Padding="0" RowSpacing="16">
         <Grid.RowDefinitions>
@@ -37,9 +11,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Win/loss label -->
+        <!-- win/loss label -->
         <Label 
-            Text="You won!"
+            x:Name="ResultLabel"
+            Text="{Binding Result}"
             VerticalOptions="End"
             HorizontalOptions="Center"
             FontSize="48"
@@ -48,11 +23,13 @@
             Padding="0,0,0,-20"
             />
 
+        <!-- mystery color frame -->
         <Frame BackgroundColor="#facade"
                Margin="12"
                CornerRadius="24"
                Grid.Row="1">
 
+            <!-- answer -->
             <Label Text="#FACADE"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
@@ -63,12 +40,14 @@
 
         </Frame>
 
+        <!-- play again button -->
         <Button Text="PLAY AGAIN"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
                 BackgroundColor="#000"
                 Grid.Row="2"
                 FontFamily="PoppinsMedium"
+                FontSize="18"
                 Padding="15,15,15,10"
                 />
         
