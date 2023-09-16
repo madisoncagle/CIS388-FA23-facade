@@ -7,41 +7,18 @@
 
     <ScrollView>
         <!-- Main grid -->
-        <Grid Padding="0" RowSpacing="16">
+        <Grid Padding="0" RowSpacing="12">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto" />
-
             </Grid.RowDefinitions>
-
-
-            <!--<RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="48" MaximumHeightRequest="150"/>-->
-            <!--<StackLayout HorizontalOptions="Fill"
-                         BackgroundColor="#facade"
-                         Padding="8" Grid.Row="0"
-                         Orientation="Horizontal" >
-
-                <Label Text="#" FontSize="60" VerticalOptions="Center" />
-                <Label Text="FACADE"
-                       FontSize="60"
-                       VerticalOptions="Center"
-                       />
-
-            </StackLayout>-->
 
             <!-- Mystery color -->
             <Frame BackgroundColor="#facade"
                    CornerRadius="36"
                    Margin="12">
-
-                <!-- Guess text -->
-                <Label Text="#FACADE"
-                       FontSize="60"
-                       FontFamily="PoppinsBold"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-
             </Frame>
 
             <!-- Past guesses -->
@@ -65,7 +42,7 @@
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
-                
+
                 <!-- Past guess 2 -->
                 <Button Grid.Row="0"
                         Grid.Column="1"
@@ -74,7 +51,7 @@
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
-                
+
                 <!-- Past guess 3 -->
                 <Button Grid.Row="0"
                         Grid.Column="2"
@@ -94,7 +71,7 @@
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
-                
+
                 <!-- Empty guess -->
                 <Button Grid.Row="1"
                         Grid.Column="1"
@@ -105,7 +82,7 @@
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
-                
+
                 <!-- Empty guess -->
                 <Button Grid.Row="1"
                         Grid.Column="2"
@@ -119,18 +96,71 @@
 
             </Grid>
 
-            <!-- Keyboard -->
-            <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
+            <!-- guess entry grid -->
+            <Grid Padding="12" Grid.Row="2" BackgroundColor="#000">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- hex symbol -->
+                <Label Text="#"
+                       TextColor="#fff"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       FontSize="32"
+                       FontFamily="PoppinsLight"
+                       VerticalOptions="Center"
+                       WidthRequest="50"
+                       Padding="0,5,0,0"
+                       />
+
+                <!-- guess entry -->
+                <Label Text="FACADE"
+                       TextColor="#fff"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="32"
+                       FontFamily="PoppinsMedium"
+                       VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       Padding="0,5,0,0"
+                       />
+
+                <!-- submit -->
+                <Button Grid.Row="0"
+                        Grid.Column="2"
+                        Text="↑"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        CornerRadius="30"
+                        BackgroundColor="#007FFF"
+                        TextColor="White"
+                        Clicked="Button_Clicked"
+                        FontSize="32"
+                        FontFamily="PoppinsBold"
+                        Padding="0,-2,0,0"/>
+
+            </Grid>
+
+            <!-- keyboard -->
+            <Grid Padding="12" Grid.Row="3" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="auto" />
 
                 </Grid.ColumnDefinitions>
 
@@ -146,7 +176,7 @@
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
                 />
-                
+
                 <!-- B -->
                 <Button Grid.Row="0"
                         Grid.Column="1"
@@ -160,7 +190,7 @@
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
                 />
-                
+
                 <!-- C -->
                 <Button Grid.Row="0"
                         Grid.Column="2"
@@ -174,7 +204,7 @@
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
                 />
-                
+
                 <!-- D -->
                 <Button Grid.Row="1"
                         Grid.Column="0"
@@ -188,7 +218,7 @@
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
                 />
-                
+
                 <!-- E -->
                 <Button Grid.Row="1"
                         Grid.Column="1"
@@ -202,7 +232,7 @@
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
                 />
-                
+
                 <!-- F -->
                 <Button Grid.Row="1"
                         Grid.Column="2"
@@ -217,35 +247,34 @@
                         Padding="0,5,0,0"
                 />
                 
-                <!-- Submit -->
-                <Button Grid.Row="0"
-                        Grid.Column="3"
-                        Text="↑"
-                        WidthRequest="60"
-                        HeightRequest="60"
-                        CornerRadius="30"
-                        BackgroundColor="#000"
-                        TextColor="White"
-                        Clicked="Button_Clicked"
-                        FontSize="48"
-                        FontFamily="PoppinsBold"
-                        Padding="0,-8,0,0"/>
-                
-                <!-- Backspace -->
-                <Button Grid.Row="1"
-                        Grid.Column="3"
+                <!-- clear -->
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Clear"
+                        BackgroundColor="#007FFF"
+                        FontSize="16"
+                        FontFamily="PoppinsMedium"
+                        CornerRadius="100"
+                        HeightRequest="40"
+                        WidthRequest="80"
+                        Padding="0,5,0,0"
+                        />
+
+                <!-- backspace -->
+                <Button Grid.Row="2"
+                        Grid.Column="2"
                         Text="⌫"
-                        WidthRequest="60"
-                        HeightRequest="60"
+                        HeightRequest="40"
                         BackgroundColor="Transparent"
                         TextColor="#000"
                         BorderWidth="0"
                         FontSize="28"
                         FontFamily="PoppinsBold"
+                        Padding="0,0,0,0"
                 />
 
-
             </Grid>
+
         </Grid>
 
     </ScrollView>

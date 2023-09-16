@@ -20,6 +20,7 @@ public static class MauiProgram
             });
 
         builder.Services.AddTransient<GameOverPage>(); // make a new copy of the page every time
+        builder.Services.AddTransient<MainPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();
