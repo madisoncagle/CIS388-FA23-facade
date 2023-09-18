@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.MainPage"
              Title="#facade"
+             xmlns:local="clr-namespace:facade"
+             x:DataType="local:MainPageViewModel"
              >
 
     <ScrollView>
@@ -17,84 +19,55 @@
 
             <!-- Mystery color -->
             <Frame BackgroundColor="#facade"
-                   CornerRadius="36"
+                   CornerRadius="24"
                    Margin="12">
-            </Frame>
 
-            <!-- Past guesses -->
-            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                <!-- past guesses -->
+                <Grid Padding="0" RowSpacing="12">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
 
-                <!-- Past guess 1 -->
-                <Button Grid.Row="0"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- past guess 1 -->
+                    <Button Grid.Row="0"
+                            Grid.Column="0"
+                            Text="#beaded"
+                            BackgroundColor="#beaded"
+                            FontSize="16"
+                            FontFamily="PoppinsMedium"
+                            IsEnabled="false "/>
+
+                    <!-- Past guess 2 -->
+                    <Button Grid.Row="1"
                         Grid.Column="0"
-                        Text="#beaded"
-                        BackgroundColor="#beaded"
-                        FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
-
-                <!-- Past guess 2 -->
-                <Button Grid.Row="0"
-                        Grid.Column="1"
                         Text="#deface"
                         BackgroundColor="#deface"
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
 
-                <!-- Past guess 3 -->
-                <Button Grid.Row="0"
-                        Grid.Column="2"
+                    <!-- Past guess 3 -->
+                    <Button Grid.Row="2"
+                        Grid.Column="0"
                         Text="#beefed"
                         BackgroundColor="#beefed"
                         FontSize="16"
                         FontFamily="PoppinsMedium"
                         IsEnabled="false "/>
 
-                <!-- Empty guess -->
-                <Button Grid.Row="1"
-                        Grid.Column="0"
-                        Text=""
-                        BackgroundColor="Transparent"
-                        BorderColor="#111"
-                        BorderWidth="1"
-                        FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
-
-                <!-- Empty guess -->
-                <Button Grid.Row="1"
-                        Grid.Column="1"
-                        Text=""
-                        BackgroundColor="Transparent"
-                        BorderColor="#111"
-                        BorderWidth="1"
-                        FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
-
-                <!-- Empty guess -->
-                <Button Grid.Row="1"
-                        Grid.Column="2"
-                        Text=""
-                        BackgroundColor="Transparent"
-                        BorderColor="#111"
-                        BorderWidth="1"
-                        FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
-
-            </Grid>
+                </Grid>
+            </Frame>
 
             <!-- guess entry grid -->
             <Grid Padding="12" Grid.Row="2" BackgroundColor="#000">
@@ -122,7 +95,8 @@
                        />
 
                 <!-- guess entry -->
-                <Label Text="FACADE"
+                <Label Text="{Binding CurrentGuess}"
+                       TextTransform="Uppercase"
                        TextColor="#fff"
                        Grid.Row="0"
                        Grid.Column="1"
@@ -142,10 +116,11 @@
                         CornerRadius="30"
                         BackgroundColor="#007FFF"
                         TextColor="White"
-                        Clicked="Button_Clicked"
-                        FontSize="32"
+                        FontSize="40"
                         FontFamily="PoppinsBold"
-                        Padding="0,-2,0,0"/>
+                        Padding="0,-7,0,0"
+                        Clicked="Button_Clicked"
+                        />
 
             </Grid>
 
@@ -161,7 +136,6 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-
                 </Grid.ColumnDefinitions>
 
                 <!-- A -->
@@ -175,7 +149,17 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="A"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- B -->
                 <Button Grid.Row="0"
@@ -189,7 +173,17 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="B"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- C -->
                 <Button Grid.Row="0"
@@ -203,7 +197,17 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="C"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- D -->
                 <Button Grid.Row="1"
@@ -217,7 +221,17 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="D"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- E -->
                 <Button Grid.Row="1"
@@ -231,7 +245,17 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="E"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- F -->
                 <Button Grid.Row="1"
@@ -245,8 +269,18 @@
                         FontSize="48"
                         FontFamily="PoppinsBold"
                         Padding="0,5,0,0"
-                />
-                
+                        Command="{Binding AddLetterCommand}"
+                        CommandParameter="F"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
+
                 <!-- clear -->
                 <Button Grid.Row="2"
                         Grid.Column="0"
@@ -258,7 +292,16 @@
                         HeightRequest="40"
                         WidthRequest="80"
                         Padding="0,5,0,0"
-                        />
+                        Command="{Binding ClearCommand}"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
                 <!-- backspace -->
                 <Button Grid.Row="2"
@@ -271,7 +314,16 @@
                         FontSize="28"
                         FontFamily="PoppinsBold"
                         Padding="0,0,0,0"
-                />
+                        Command="{Binding DeleteLetterCommand}"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="4"
+                                />
+                    </Button.Shadow>
+                </Button>
 
             </Grid>
 
