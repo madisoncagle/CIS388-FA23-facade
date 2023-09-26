@@ -23,7 +23,7 @@
                    Margin="12">
 
                 <!-- past guesses -->
-                <Grid Padding="0" RowSpacing="12">
+                <!--<Grid Padding="0" RowSpacing="12">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -39,34 +39,111 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- past guess 1 -->
+                    -->
+                <!-- past guess 1 -->
+                <!--
                     <Button Grid.Row="0"
                             Grid.Column="0"
-                            Text="#beaded"
+                            Text="#BEADED"
                             BackgroundColor="#beaded"
                             FontSize="16"
-                            FontFamily="PoppinsMedium"
-                            IsEnabled="false "/>
+                            FontFamily="PoppinsBold"
+                            IsEnabled="false"
+                            CornerRadius="12">
 
-                    <!-- Past guess 2 -->
+                        <Button.Shadow>
+                            <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="12"
+                                />
+                        </Button.Shadow>
+                    </Button>
+
+                    -->
+                <!-- Past guess 2 -->
+                <!--
                     <Button Grid.Row="1"
                         Grid.Column="0"
-                        Text="#deface"
+                        Text="#DEFACE"
                         BackgroundColor="#deface"
                         FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
+                        FontFamily="PoppinsBold"
+                        IsEnabled="false"
+                            CornerRadius="12">
 
-                    <!-- Past guess 3 -->
+                        <Button.Shadow>
+                            <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="12"
+                                />
+                        </Button.Shadow>
+                    </Button>
+
+                    -->
+                <!-- Past guess 3 -->
+                <!--
                     <Button Grid.Row="2"
                         Grid.Column="0"
-                        Text="#beefed"
+                        Text="#BEEFED"
                         BackgroundColor="#beefed"
                         FontSize="16"
-                        FontFamily="PoppinsMedium"
-                        IsEnabled="false "/>
+                        FontFamily="PoppinsBold"
+                        IsEnabled="false"
+                            CornerRadius="12">
 
-                </Grid>
+                        <Button.Shadow>
+                            <Shadow Brush="#000"
+                                Offset="0,7"
+                                Opacity="0.5"
+                                Radius="12"
+                                />
+                        </Button.Shadow>
+                    </Button>
+
+                </Grid>-->
+
+                <CollectionView ItemsSource="{Binding Guesses}">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="local:ColorGuess">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Text="{Binding Guess}"
+                                        TextTransform="Uppercase"
+                                        TextColor="#000"
+                                        BackgroundColor="{Binding Color}"
+                                        FontSize="16"
+                                        FontFamily="PoppinsBold"
+                                        IsEnabled="false"
+                                        CornerRadius="12">
+
+                                    <!--<Button.Shadow>
+                                        <Shadow Brush="#000"
+                                                Offset="0,7"
+                                                Opacity="0.5"
+                                                Radius="12"
+                                                />
+                                    </Button.Shadow>-->
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Frame>
 
             <!-- guess entry grid -->
@@ -119,7 +196,7 @@
                         FontSize="40"
                         FontFamily="PoppinsBold"
                         Padding="0,-7,0,0"
-                        Clicked="Button_Clicked"
+                        Command="{Binding GuessCommand}"
                         />
 
             </Grid>
