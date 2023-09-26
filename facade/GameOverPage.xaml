@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
-             Title="">
+             Title=""
+             xmlns:local="clr-namespace:facade"
+             x:DataType="local:GameOverViewModel">
 
     <Grid Padding="0" RowSpacing="16">
         <Grid.RowDefinitions>
@@ -14,7 +16,7 @@
         <!-- win/loss label -->
         <Label 
             x:Name="ResultLabel"
-            Text="{Binding Result}"
+            Text=""
             VerticalOptions="End"
             HorizontalOptions="Center"
             FontSize="48"
@@ -49,6 +51,7 @@
                 FontFamily="PoppinsMedium"
                 FontSize="18"
                 Padding="15,15,15,10"
+                Command="{Binding ReplayCommand}"
                 />
         
     </Grid>

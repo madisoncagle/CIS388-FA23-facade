@@ -29,9 +29,6 @@ namespace facade
             currentGuess = "";
 
             Guesses = new ObservableCollection<ColorGuess>();
-
-            Guesses.Add(new ColorGuess("beaded"));
-            Guesses.Add(new ColorGuess("deface"));
         }
 
         // METHODS
@@ -58,22 +55,26 @@ namespace facade
 
         // TODO
         [RelayCommand]
-        void Guess()
+        async Task Guess()
         {
             if (CurrentGuess.Length == 6) // only if there's enough letters in the guess
             {
-                if (CurrentGuess == SecretColor)
+                if (CurrentGuess.ToLower() == SecretColor)
                 {
                     // go to game over page, DidWin = true
+                    await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={true}");
+                    ClearData();
                 }
                 else if (Guesses.Count == 6)
                 {
                     // go to game over page, DidWin = false
+                    await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={false}");
+                    ClearData();
                 }
                 else
                 {
                     // add CurrentGuess to Guesses
-                    Guesses.Add(new ColorGuess(CurrentGuess));
+                    Guesses.Add(new ColorGuess(CurrentGuess.ToLower()));
                     CurrentGuess = "";
                 }
             }
@@ -83,6 +84,12 @@ namespace facade
         void Clear()
         {
             CurrentGuess = "";
+        }
+
+        void ClearData()
+        {
+            CurrentGuess = "";
+            Guesses.Clear();
         }
     }
 }

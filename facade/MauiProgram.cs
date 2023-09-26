@@ -19,8 +19,11 @@ public static class MauiProgram
                 fonts.AddFont("Poppins-Bold.ttf", "PoppinsBold");
             });
 
-        builder.Services.AddTransient<GameOverPage>(); // make a new copy of the page every time
         builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<MainPageViewModel>();
+
+        builder.Services.AddTransient<GameOverPage>();
+        builder.Services.AddTransient<GameOverViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();
