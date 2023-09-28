@@ -26,13 +26,13 @@
             />
 
         <!-- mystery color frame -->
-        <Frame BackgroundColor="#facade"
+        <Frame BackgroundColor="{Binding SecretColor}"
                Margin="12"
                CornerRadius="24"
                Grid.Row="1">
 
             <!-- answer -->
-            <Label Text="#FACADE"
+            <Label Text="{Binding SecretColorHex}"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    FontSize="36"

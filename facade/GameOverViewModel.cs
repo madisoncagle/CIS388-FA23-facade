@@ -10,11 +10,19 @@ using System.Threading.Tasks;
 
 namespace facade
 {
+    [QueryProperty("SecretColor", "SecretColor")]
+    [QueryProperty("SecretColorHex", "SecretColorHex")]
     public partial class GameOverViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private Color secretColor;
+
+        [ObservableProperty]
+        private string secretColorHex;
+
         public GameOverViewModel()
         {
-            
+            //SecretColorHex = SecretColor.ToHex().ToUpper().Remove(0, 1);
         }
 
         [RelayCommand]
