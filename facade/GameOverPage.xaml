@@ -8,28 +8,36 @@
 
     <Grid Padding="0" RowSpacing="16">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- win/loss label -->
-        <Label 
-            x:Name="ResultLabel"
-            Text=""
-            VerticalOptions="End"
-            HorizontalOptions="Center"
-            FontSize="48"
-            FontFamily="PoppinsLight"
-            Grid.Row="0"
-            Padding="0,0,0,-20"
-            />
+        <Label Text="{Binding Result}"
+               VerticalOptions="End"
+               HorizontalOptions="Center"
+               FontSize="48"
+               FontFamily="PoppinsLight"
+               Grid.Row="0"
+               Padding="0,0,0,-20"
+               />
+
+        <Label Text="{Binding Subtext}"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"
+               FontSize="24"
+               FontFamily="PoppinsLight"
+               Grid.Row="1"
+               Padding="0,0,0,0"
+               />
 
         <!-- mystery color frame -->
         <Frame BackgroundColor="{Binding SecretColor}"
                Margin="12"
                CornerRadius="24"
-               Grid.Row="1">
+               Grid.Row="2">
 
             <!-- answer -->
             <Label Text="{Binding SecretColorHex}"
@@ -47,12 +55,12 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
                 BackgroundColor="#000"
-                Grid.Row="2"
+                Grid.Row="3"
                 FontFamily="PoppinsMedium"
                 FontSize="18"
                 Padding="15,15,15,10"
                 Command="{Binding ReplayCommand}"
                 />
-        
+
     </Grid>
 </ContentPage>

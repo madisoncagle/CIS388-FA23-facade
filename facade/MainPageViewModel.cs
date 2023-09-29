@@ -15,7 +15,7 @@ namespace facade
 
         private List<Color> colors = new List<Color>
         {
-            // Is there a better way to do this? Yes. Do I know it? No.
+            // Is there a better way to do this? Probably. Do I know it? No.
             new Color(Color.FromArgb("#EFFACE").Red, Color.FromArgb("#EFFACE").Green, Color.FromArgb("#EFFACE").Blue, Color.FromArgb("#EFFACE").Alpha),
             new Color(Color.FromArgb("#DEFACE").Red, Color.FromArgb("#DEFACE").Green, Color.FromArgb("#DEFACE").Blue, Color.FromArgb("#DEFACE").Alpha),
             new Color(Color.FromArgb("#DEEDED").Red, Color.FromArgb("#DEEDED").Green, Color.FromArgb("#DEEDED").Blue, Color.FromArgb("#DEEDED").Alpha),
@@ -80,11 +80,12 @@ namespace facade
             {
                 if (CurrentGuess.ToLower() == SecretColor.ToHex().ToLower().Remove(0, 1))
                 {
-                    // go to game over page, DidWin = true
+                    // go to game over page: "You won!"
                     //await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={true}&SecretColor={SecretColor}");
                     await Shell.Current.GoToAsync($"{nameof(GameOverPage)}", new Dictionary<string, object>
                     {
-                        { "DidWin", true },
+                        { "Result", "You won!" },
+                        { "Subtext", $"Guesses: {Guesses.Count + 1}" },
                         { "SecretColor", SecretColor },
                         { "SecretColorHex", SecretColor.ToHex().ToUpper() }
                     });
@@ -92,11 +93,12 @@ namespace facade
                 }
                 else if (Guesses.Count == 5)
                 {
-                    // go to game over page, DidWin = false
+                    // go to game over page: "TOo bad"
                     //await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={false}&SecretColor={SecretColor}");
                     await Shell.Current.GoToAsync($"{nameof(GameOverPage)}", new Dictionary<string, object>
                     {
-                        { "DidWin", false },
+                        { "Result", "Too bad" },
+                        { "Subtext", "Making 6 letter words is hard" },
                         { "SecretColor", SecretColor },
                         { "SecretColorHex", SecretColor.ToHex().ToUpper() }
                     });
